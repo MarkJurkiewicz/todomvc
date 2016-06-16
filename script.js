@@ -96,8 +96,11 @@ var handlers = {
 
 var view = {
     displayTodos: function () {
-        var todosUl = document.querySelector('ul');
-        var todoLi = document.createElement('li');
-        todosUl.appendChild(todoLi);
+        var todoLen = todoList.todos.length;
+        for (var i = 0; i < todoLen; i++) {
+            var todosUl = document.querySelector('ul');
+            var todoLi = document.createElement('li');
+            todosUl.appendChild(todoLi);
+        }
     }
 }
