@@ -100,8 +100,8 @@ var view = {
         var todosUl = document.querySelector('ul');
         todosUl.innerHTML = '';
         for (var i = 0; i < todoLen; i++) {
-            var todosUl = document.querySelector('ul');
             var todoLi = document.createElement('li');
+            var todo = todoList.todos[i];
             todoLi.textContent =  todoList.todos[i].todoText;
             todosUl.appendChild(todoLi);
         }
