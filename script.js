@@ -97,6 +97,8 @@ var handlers = {
 var view = {
     displayTodos: function () {
         var todoLen = todoList.todos.length;
+        var todosUl = document.querySelector('ul')
+        todosUl.innerHTML = '';
         for (var i = 0; i < todoLen; i++) {
             var todosUl = document.querySelector('ul');
             var todoLi = document.createElement('li');
