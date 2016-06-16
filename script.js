@@ -94,16 +94,25 @@ var handlers = {
     }
 };
 
+// responsible for what user sees
 var view = {
     displayTodos: function () {
         var todoLen = todoList.todos.length;
-        var todosUl = document.querySelector('ul');
+        var todosUl = document.querySelector('ul')
         todosUl.innerHTML = '';
         for (var i = 0; i < todoLen; i++) {
             var todoLi = document.createElement('li');
             var todo = todoList.todos[i];
-            todoLi.textContent =  todoList.todos[i].todoText;
+            var todoTextWithCompletion = '';
+
+            if (todo.completed === true) {
+                todoTextWithCompletion = '(x) ' + todo.todoText;
+            } else {
+                todoTextWithCompletion = '( ) ' + todo.todoText;
+            }
+
+            todoLi.textContent = todoTextWithCompletion;
             todosUl.appendChild(todoLi);
         }
     }
-}
+};
