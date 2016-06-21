@@ -56,7 +56,7 @@ var handlers = {
         changeTodoTextInput.value = '';
         view.displayTodos();
     },
-    deleteTodo: function () {
+    deleteTodo: function (position) {
         todoList.deleteTodo(position);
         view.displayTodos();
     },
