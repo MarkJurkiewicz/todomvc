@@ -35,7 +35,7 @@ var todoList = {
             // Case 2: Otherwise, make everything true.
         } else {
             for (var iii = 0; iii < totalTodos; iii++) {
-                this.todos[i].completed = true;
+                this.todos[iii].completed = true;
             }
         }
     }
