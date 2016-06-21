@@ -57,9 +57,7 @@ var handlers = {
         view.displayTodos();
     },
     deleteTodo: function () {
-        var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
-        todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
-        deleteTodoPositionInput.value = '';
+        todoList.deleteTodo(position);
         view.displayTodos();
     },
     toggleCompleted: function () {
