@@ -71,13 +71,11 @@ var handlers = {
 };
 // responsible for what user sees
 var view = {
-    displayTodos: function () {
-        var todoLen = todoList.todos.length;
-        var todosUl = document.querySelector('ul')
+    displayTodos: function() {
+        var todosUl = document.querySelector('ul');
         todosUl.innerHTML = '';
-        for (var i = 0; i < todoLen; i++) {
+        todoList.todos.forEach(function(todo, position) {
             var todoLi = document.createElement('li');
-            var todo = todoList.todos[i];
             var todoTextWithCompletion = '';
 
             if (todo.completed === true) {
@@ -86,11 +84,11 @@ var view = {
                 todoTextWithCompletion = '( ) ' + todo.todoText;
             }
 
-            todoLi.li = i;
+            todoLi.id = position;
             todoLi.textContent = todoTextWithCompletion;
             todoLi.appendChild(this.createDeleteButton());
             todosUl.appendChild(todoLi);
-        }
+        }, this);
     },
     createDeleteButton: function () {
         var deleteButton = document.createElement('button');
